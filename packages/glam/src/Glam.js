@@ -2,7 +2,12 @@
 import type { AST } from './types';
 import StyleSheet from './sheet';
 
-const isBrowser = typeof window !== 'undefined';
+const isBrowser = !!(
+  typeof window !== 'undefined' &&
+  window.document &&
+  window.document.createElement
+);
+
 import generate from './generate';
 
 type Props = {

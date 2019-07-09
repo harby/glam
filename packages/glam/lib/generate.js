@@ -10,7 +10,7 @@ var _CSSPropertyOperations = require('./CSSPropertyOperations');
 
 var _plugins = require('./plugins');
 
-var isBrowser = typeof window !== 'undefined';
+var isBrowser = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 // import type { AST } from './types';
 
 

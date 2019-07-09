@@ -2,7 +2,11 @@
 // import type { AST } from './types';
 import { createMarkupForStyles } from './CSSPropertyOperations';
 
-const isBrowser = typeof window !== 'undefined';
+const isBrowser = !!(
+  typeof window !== 'undefined' &&
+  window.document &&
+  window.document.createElement
+);
 
 import { prefixes, fallbacks, contentWrap } from './plugins';
 

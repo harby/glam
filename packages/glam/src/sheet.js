@@ -34,7 +34,11 @@ function last(arr) {
   return arr[arr.length - 1];
 }
 
-const isBrowser = typeof window !== 'undefined';
+const isBrowser = !!(
+  typeof window !== 'undefined' &&
+  window.document &&
+  window.document.createElement
+);
 
 const oldIE = ((): boolean => {
   if (isBrowser) {

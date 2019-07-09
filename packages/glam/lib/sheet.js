@@ -39,7 +39,7 @@ styleSheet.insert('#box { border: 1px solid red; }')
 
 // const doc = global.document;
 
-var isBrowser = typeof window !== 'undefined';
+var isBrowser = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 
 var oldIE = function () {
   if (isBrowser) {

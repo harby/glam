@@ -11,7 +11,11 @@ import Glam from './Glam';
 import parse from './parse';
 import generate from './generate';
 
-const isBrowser = typeof window !== 'undefined';
+const isBrowser = !!(
+  typeof window !== 'undefined' &&
+  window.document &&
+  window.document.createElement
+);
 
 let isHydrating: boolean = false;
 
